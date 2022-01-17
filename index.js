@@ -1,13 +1,13 @@
 require("dotenv").config();
 const express = require("express");
-const morgan = require("morgan");
+// const morgan = require("morgan");
 const app = express();
 const { ACCESS_TOKEN, DOMAIN } = process.env;
 const { Shopify } = require("@shopify/shopify-api");
 app.set("PORT", process.env.PORT || 3001);
 const port = app.get("PORT");
 // middleweares
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
   res.header('Access-Control-Allow-Credentials', 'true');
